@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sigmoid Fest Registration</title>
+<style>
+   body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .event {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  .event img {
+    width: 100%;
+    height: auto;
+  }
+  .event-title {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #007bff;
+    color: #fff;
+  }
+  .checkout-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+  }
+  .checkout-btn:hover {
+    background-color: #0056b3;
+  }
+</style>
+</head>
+<body>
+s
+<div class="container">
+  <h1>Sigmoid Fest Registration</h1>
+  
+  <div class="event">
+    <div class="event-title">Technovate- Paper Presentation</div>
+    <img src="" alt="Event 1">
+    <label><input type="checkbox" name="event1" value="Event 1" data-price="50"> Participate ($50)</label>
+  </div>
+  
+  <div class="event">
+    <div class="event-title">Posterize- Poster Presentation</div>
+    <img src="event2.jpg" alt="Event 2">
+    <label><input type="checkbox" name="event2" value="Event 2" data-price="75"> Participate ($75)</label>
+  </div>
+  
+  <!-- Add more events as needed -->
+  
+  <a href="#" id="checkout-btn" class="checkout-btn">Checkout ($0)</a>
+</div>
+
+<script>
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  const checkoutBtn = document.getElementById('checkout-btn');
+  let totalAmount = 0;
+
+  checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+      const price = parseFloat(this.dataset.price);
+      if (this.checked) {
+        totalAmount += price;
+      } else {
+        totalAmount -= price;
+      }
+      checkoutBtn.textContent = `Checkout ($${totalAmount.toFixed(2)})`;
+    });
+  });
+</script>
+
+</body>
+</html>
