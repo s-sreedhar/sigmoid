@@ -1,7 +1,7 @@
 (() => {
     document.addEventListener("DOMContentLoaded", function () {
-        let currentYear = new Date().getFullYear() + 2;
-        let targetDate = new Date(currentYear, 0, 1);
+        
+        let targetDate = new Date(2024,3,17);
         let onStart = () => {
             document.querySelector('.next-year').innerHTML = currentYear;
             document.querySelectorAll('.countdown-item').forEach(item => item.classList.add('show'))
